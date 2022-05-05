@@ -1,0 +1,43 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Algorithms",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "npm run lint && rimraf dist/ && tsc",
+    "start": "npm run build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.ts",
+    "old_test": "echo \"Error: no test specified\" && exit 1",
+    "old_chap01": "node dist/chapter-01/print-plays.js",
+    "old_build": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neohed/algorithms.git"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "algorithms"
+  ],
+  "author": "neohed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neohed/algorithms/issues"
+  },
+  "homepage": "https://github.com/neohed/algorithms#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.25",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.7.0",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.6.3"
+  }
+}
