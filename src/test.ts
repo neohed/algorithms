@@ -13,6 +13,7 @@ interface Green {
   age: number
 }
 
+// Intersection operator & creates a new type.
 type K = Red & Blue;
 const k: K = { age: 5, name: 'Dave' };
 console.log(k.name)
@@ -22,10 +23,11 @@ type Y = Red & Green;
 const y: Y = { age: 5, name: 'Dave' };
 console.log(y.age)
 
-type X = Red | Green;
-const xRed: X = { name: 'Dave' };
+// Union operator | creates a set of types that is determined upon use
+type X = Red | Green; // Can be either type Red or Green with either property name or age
+const xRed: X = { name: 'Dave' }; // Fixes type as Red
 console.log(xRed.name)
-const xGreen: X = { age: 1 };
+const xGreen: X = { age: 1 }; // Fixes type as Green
 console.log(xGreen.age)
 
 type Z = Red | Blue;
