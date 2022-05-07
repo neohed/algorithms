@@ -1,1 +1,4 @@
-//import {statement, htmlStatement} from './chapter-01/print-plays';
+import numbers from './data-001';
+import search from './binary-search';
+
+console.log(search(numbers, 7))
