@@ -22,9 +22,10 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/object-curly-spacing': 'off',
     '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/semi': 'off',
+    'no-trailing-spaces': 'off',
     'function-paren-newline': 'off',
     'arrow-parens': 'off',
-    '@typescript-eslint/semi': 'off',
     'class-methods-use-this': 'off',
   },
 };
