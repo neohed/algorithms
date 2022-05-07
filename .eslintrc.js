@@ -26,6 +26,7 @@ module.exports = {
     'no-trailing-spaces': 'off',
     'function-paren-newline': 'off',
     'no-console': 'off',
+    'prefer-template': 'off',
     'arrow-parens': 'off',
     'class-methods-use-this': 'off',
   },
