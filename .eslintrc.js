@@ -25,6 +25,7 @@ module.exports = {
     '@typescript-eslint/semi': 'off',
     'no-trailing-spaces': 'off',
     'function-paren-newline': 'off',
+    'no-console': 'off',
     'arrow-parens': 'off',
     'class-methods-use-this': 'off',
   },
