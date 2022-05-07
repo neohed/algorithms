@@ -3,7 +3,7 @@ function search(items: (number | string)[], item: number | string): number | und
   let high = items.length;
 
   while (low <= high) {
-    const mid = (low + high) / 2;
+    const mid = Math.floor((low + high) / 2);
     const guess = items[mid];
 
     if (guess === item) {
