@@ -32,7 +32,10 @@ function Pipeline(...initMiddlewares: Middleware[]) {
     await runner(0)
   }
 
-  return { push, execute }
+  return {
+    push,
+    execute
+  }
 }
 
 export default Pipeline
