@@ -3,28 +3,28 @@ interface Middleware {
 }
 
 function Pipeline(...initMiddlewares: Middleware[]) {
-  const stack = initMiddlewares
+  const middlewares = initMiddlewares
 
-  const push = (...middlewares: Middleware[]) => {
-    stack.push(...middlewares)
+  const push = (...additionalMiddlewares: Middleware[]) => {
+    middlewares.push(...additionalMiddlewares)
   }
 
-  const execute = async (context) => {
-    let prevIndex = -1
+  const execute = async (executionContext) => {
+    let prevRunnerIndex = -1
 
-    const runner = async (index) => {
-      if (index === prevIndex) {
-        throw new Error('next() called multiple times')
+    const runner = async (runnerIndex) => {
+      if (runnerIndex === prevRunnerIndex) {
+        throw new Error('next() must only be called once in each Pipeline function!')
       }
 
-      prevIndex = index
+      prevRunnerIndex = runnerIndex
 
-      const middleware = stack[index]
+      const middleware = middlewares[runnerIndex]
 
       if (middleware) {
         await middleware(
-          context,
-          () => runner(index + 1)
+          executionContext,
+          () => runner(runnerIndex + 1)
         )
       }
     }
