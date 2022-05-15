@@ -1,4 +1,7 @@
-type Middleware = (ctx: object, next: Middleware) => void;
+interface Context {
+  content: string;
+}
+type Middleware = (ctx: Context, next: () => void) => void;
 
 function Pipeline(...initMiddlewares: Middleware[]) {
   const middlewares = initMiddlewares
@@ -7,7 +10,7 @@ function Pipeline(...initMiddlewares: Middleware[]) {
     middlewares.push(...additionalMiddlewares)
   }
 
-  const execute = async (executionContext: object) => {
+  const execute = async (executionContext: Context) => {
     let prevRunnerIndex = -1
 
     const runner = async (runnerIndex: number) => {
