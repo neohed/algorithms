@@ -1,4 +1,4 @@
-import splitCodeAndProse from './parser'
+import splitCodeAndProse from './parser';
 /*
 import numbers from './data-001';
 import search from './search/binary-search';
@@ -40,11 +40,11 @@ pipeline
  */
 
 const code = '# Code\n'
-  + '\n'
+  + 'Code:\n'
   + '```JavaScript\n'
   + 'const a = 1;\n'
   + '```\n'
-  + '\n'
+  + 'that be the code\n'
   + 'bla bla\n'
   + '\n'
   + '```Shell\n'
@@ -54,6 +54,6 @@ const code = '# Code\n'
   + 'Fin.'
 
 const codeMeta = splitCodeAndProse(code);
-const {start, end} = codeMeta.codeBlocks[0];
-console.log(codeMeta)
-console.log(code.substring(start, end))
+const {codeBlocks} = codeMeta;
+const parsed = codeBlocks.reduceRight((acc, {start, end}) => acc.substring(0, start) + '-SNIP-' + acc.substring(end), code)
+console.log(parsed)

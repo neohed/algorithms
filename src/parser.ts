@@ -30,6 +30,7 @@ function splitCodeAndProse(
   let language = '';
   let prose = '';
   let codeSnippet = '';
+  let snippetStart = 0;
 
   for (
     let i = 0, dataLength = code.length;
@@ -40,8 +41,8 @@ function splitCodeAndProse(
 
     if (c === BACK_TICK && isCodeFence(i)) {
       if (insideCodeBlock) {
-        const start = i - codeSnippet.length;
-        const end = i;
+        const start = snippetStart;
+        const end = i + 3;
 
         codeBlocks.push({
           language,
@@ -58,7 +59,8 @@ function splitCodeAndProse(
         const match = sub.match(reStartCodeBlock);
 
         if (match !== null) {
-          language = match[1] || ''
+          snippetStart = i;
+          language = match[1] || '';
           i += match[0].length - 1;
           insideCodeBlock = true
         } else {
