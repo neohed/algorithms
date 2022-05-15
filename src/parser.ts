@@ -61,6 +61,8 @@ function splitCodeAndProse(
           language = match[1] || ''
           i += match[0].length - 1;
           insideCodeBlock = true
+        } else {
+          prose += c
         }
       }
     } else if (insideCodeBlock) {
