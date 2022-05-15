@@ -8,10 +8,10 @@ function Pipeline(...initMiddlewares: Middleware[]) {
     middlewares.push(...additionalMiddlewares)
   }
 
-  const execute = async (executionContext) => {
+  const execute = async (executionContext: object) => {
     let prevRunnerIndex = -1
 
-    const runner = async (runnerIndex) => {
+    const runner = async (runnerIndex: number) => {
       if (runnerIndex === prevRunnerIndex) {
         throw new Error('next() must only be called once in each Pipeline function!')
       }
