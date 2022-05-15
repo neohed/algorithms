@@ -55,9 +55,9 @@ function splitCodeAndProse(
         i += 2
       } else {
         const sub = code.substring(i);
+        const match = sub.match(reStartCodeBlock);
 
-        if (reStartCodeBlock.test(sub)) {
-          const match = sub.match(reStartCodeBlock);
+        if (match !== null) {
           language = match[1] || ''
           i += match[0].length - 1;
           insideCodeBlock = true
