@@ -1,6 +1,5 @@
-interface Middleware {
-  (object, Middleware)
-}
+type NextMiddleware = Middleware | undefined;
+type Middleware = (ctx: object, next: NextMiddleware) => void;
 
 function Pipeline(...initMiddlewares: Middleware[]) {
   const middlewares = initMiddlewares
