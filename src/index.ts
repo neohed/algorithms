@@ -55,5 +55,7 @@ const code = '# Code\n'
 
 const codeMeta = splitCodeAndProse(code);
 const {codeBlocks} = codeMeta;
+console.log(codeBlocks)
+
 const parsed = codeBlocks.reduceRight((acc, {start, end}) => acc.substring(0, start) + '-SNIP-' + acc.substring(end), code)
 console.log(parsed)
