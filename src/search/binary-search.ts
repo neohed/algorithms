@@ -1,4 +1,7 @@
-function search(items: (number | string)[], item: number | string): number | undefined {
+type NumStr = number | string;
+type Res = NumStr | undefined;
+
+function search(items: NumStr[], item: NumStr): Res {
   let low = 0;
   let high = items.length;
 
