@@ -1,7 +1,4 @@
-type NumStr = number | string;
-type Res = NumStr | undefined;
-
-function search(items: NumStr[], item: NumStr): Res {
+function binarySearch(items, item) {
   let low = 0;
   let high = items.length;
 
@@ -23,4 +20,4 @@ function search(items: NumStr[], item: NumStr): Res {
   return undefined
 }
 
-export default search
+module.exports = binarySearch

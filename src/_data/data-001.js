@@ -21,4 +21,6 @@ const numbers = [
   20,
 ]
 
-export default numbers
+module.exports = {
+  numbers
+}
