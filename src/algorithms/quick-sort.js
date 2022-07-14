@@ -3,7 +3,7 @@ function quickSort(array) {
     return array
   }
 
-  const pivot = array[0];
+  const pivot = array.shift();
   const less = array.filter(v => v <= pivot);
   const greater = array.filter(v => v > pivot);
 

@@ -16,8 +16,6 @@ function binarySearch(items, item) {
       low = mid + 1
     }
   }
-
-  return undefined
 }
 
 module.exports = binarySearch
