@@ -4,8 +4,7 @@ function quickSort(array) {
   }
 
   const pivotPoint = Math.floor(Math.random() * array.length);
-  const pivot = array[pivotPoint];
-  array.splice(pivotPoint, 1);
+  const pivot = array.splice(pivotPoint, 1)[0];
   const less = array.filter(v => v <= pivot);
   const greater = array.filter(v => v > pivot);
 
