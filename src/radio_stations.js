@@ -1,4 +1,4 @@
-const set_covering = require('./algorithms/set_covering');
+const set_covering = require('./algorithms/set-covering');
 
 let wanted = new Set([
   'mt',
