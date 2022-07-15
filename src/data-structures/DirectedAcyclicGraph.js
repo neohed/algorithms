@@ -2,14 +2,14 @@ const {makeArray} = require('../util/arrays');
 
 /*
  * Example use:
- * var dag = new DAG('Test');
+ * const dag = new DirectedAcyclicGraph('Test');
  *
- *  dag.addNodes(['a', 'b', 'c', 'd']).addNodes('e')
- *      .node('a').addEdges(['b', 'd'])
- *      .node('b').addEdges(['c', 'e'])
- *      .node('c').addEdges(['d', 'e']);
+ * dag.addNodes(['a', 'b', 'c', 'd']).addNodes('e')
+ *     .node('a').addEdges(['b', 'd'])
+ *     .node('b').addEdges(['c', 'e'])
+ *     .node('c').addEdges(['d', 'e']);
  *
- *  var resolutionOrder = dag.dependencies('a');
+ * const resolutionOrder = dag.dependencies('a');
  */
 
 class DirectedAcyclicGraph {
