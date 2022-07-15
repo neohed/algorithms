@@ -9,7 +9,7 @@ const {makeArray} = require('../util/arrays');
  *      .node('b').addEdges(['c', 'e'])
  *      .node('c').addEdges(['d', 'e']);
  *
- *  var resolutionOrder = dag.dependencies();
+ *  var resolutionOrder = dag.dependencies('a');
  */
 
 class DirectedAcyclicGraph {
@@ -42,8 +42,8 @@ class DirectedAcyclicGraph {
     return this.#nodes[nodeName] !== undefined
   }
 
-  dependencies(nodeName) {
-    const startNode = this.#nodes[nodeName];
+  dependencies(startNodeName) {
+    const startNode = this.#nodes[startNodeName];
     const unresolved = {};
     const resolved = {};
 
@@ -114,7 +114,7 @@ class DirectedAcyclicGraph {
     if (startNode !== undefined) {
       makeGdl(startNode)
 
-      return 'digraph {0} {{1}}'.replace('{0}', name)
+      return 'digraph {0} {{1}}'.replace('{0}', this.#name)
         .replace('{1}', gdlRows.join('; ') + ';')
     }
 
@@ -124,7 +124,7 @@ class DirectedAcyclicGraph {
       commands = [];
     let matchGdlRow;
 
-    name = /^digraph\s(\w+)/i.exec(gdl)[1];
+    this.#name = /^digraph\s(\w+)/i.exec(gdl)[1];
 
     while (matchGdlRow = reGdlRow.exec(gdl)) {
       const gdlRow = matchGdlRow[0];
