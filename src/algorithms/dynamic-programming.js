@@ -40,8 +40,12 @@ for (let row = 0; row < items.length; row++) {
   const currentItem = items[row];
 
   for (let col = 0; col < maxSize; col++) {
-    const previousMax = (row > 0) ? sumItems(rows[row - 1][col]) : 0;
-    const currentItemThatFits = currentItem.weight <= (col + 1) ? currentItem.price + sumItems(leftOverItems(currentItem.weight, row, col)) : 0;
+    const previousMax = (row > 0)
+      ? sumItems(rows[row - 1][col])
+      : 0;
+    const currentItemThatFits = currentItem.weight <= (col + 1)
+      ? currentItem.price + sumItems(leftOverItems(currentItem.weight, row, col))
+      : 0;
 
     if (previousMax > currentItemThatFits) {
       rows[row][col] = [
