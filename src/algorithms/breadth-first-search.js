@@ -1,6 +1,5 @@
 const Queue = require('../data-structures/Queue');
 
-//TODO Needs a graph implementation!
 function breadthFirstSearch(graph, startNode, isTargetNode) {
   const searchQueue = new Queue(startNode);
   const searched = [];
