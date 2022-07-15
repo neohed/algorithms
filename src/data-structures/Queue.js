@@ -7,12 +7,16 @@ class Queue {
     }
   }
 
-  enqueue(element) {
-    this.#items.push(element)
+  enqueue(...elements) {
+    elements.forEach(element => this.#items.push(element))
   }
 
-  get dequeue() {
+  dequeue() {
     return this.#items.shift()
+  }
+
+  get peek() {
+    return this.#items[0]
   }
 
   get length() {
@@ -21,10 +25,6 @@ class Queue {
 
   get isEmpty() {
     return this.length === 0
-  }
-
-  get peek() {
-    return this.#items[0]
   }
 }
 
