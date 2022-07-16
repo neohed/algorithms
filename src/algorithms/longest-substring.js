@@ -20,6 +20,7 @@ function longestSubstring(word1, word2) {
       if (word1.charAt(col) === word2.charAt(row)) {
         const n = 1 + getTopLeftValue(row, col);
         grid[row][col] = n;
+        
         if (n > max.n) {
           max = {
             n,
