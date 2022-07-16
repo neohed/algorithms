@@ -1,5 +1,5 @@
 const sumItems = x => x.reduce((acc, item) => acc + item.price, 0);
-const leftOverItems = (weight, row, col) => {
+const gapFillItems = (weight, row, col) => {
   if (row > 0 && col + 1 - weight > 0) {
     return rows[row - 1][col - weight]
   } else {
@@ -44,7 +44,7 @@ for (let row = 0; row < items.length; row++) {
       ? sumItems(rows[row - 1][col])
       : 0;
     const currentItemThatFits = currentItem.weight <= (col + 1)
-      ? currentItem.price + sumItems(leftOverItems(currentItem.weight, row, col))
+      ? currentItem.price + sumItems(gapFillItems(currentItem.weight, row, col))
       : 0;
 
     if (previousMax > currentItemThatFits) {
@@ -54,7 +54,7 @@ for (let row = 0; row < items.length; row++) {
     } else {
       rows[row][col] = [
         currentItem,
-        ...leftOverItems(currentItem.weight, row, col)
+        ...gapFillItems(currentItem.weight, row, col)
       ]
     }
   }
