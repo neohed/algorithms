@@ -74,6 +74,7 @@ class DirectedAcyclicGraph {
     return this.#name
   }
 
+  // WARNING: method currently bugged!
   toDOT(startNodeName) {
     ///	<summary>
     ///     Return current graph in
