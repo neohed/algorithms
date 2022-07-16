@@ -43,7 +43,7 @@ class DirectedAcyclicGraph {
   }
 
   dependencies(startNodeName) {
-    const startNode = this.#nodes[startNodeName];
+    const startNode = this.node(startNodeName);
     const unresolved = {};
     const resolved = {};
 
@@ -74,12 +74,10 @@ class DirectedAcyclicGraph {
     return this.#name
   }
 
-  DOT(gdl, startNode) {
+  toDOT(startNodeName) {
     ///	<summary>
-    ///     If no parameter supplied return current graph in
+    ///     Return current graph in
     ///     gdl  (graph description language).
-    ///		If parameter supplied build a graph from gdl.
-    ///     Ex: 'digraph myGraph { a -> b -> c; b -> d; }'
     ///	</summary>
 
     const gdlRows = [];
@@ -111,13 +109,17 @@ class DirectedAcyclicGraph {
       }
     }
 
-    if (startNode !== undefined) {
-      makeGdl(startNode)
+    makeGdl(this.node(startNodeName))
 
-      return 'digraph {0} {{1}}'.replace('{0}', this.#name)
-        .replace('{1}', gdlRows.join('; ') + ';')
-    }
+    return 'digraph {0} {{1}}'.replace('{0}', this.#name)
+      .replace('{1}', gdlRows.join('; ') + ';')
+  }
 
+  DOT(gdl) {
+    ///	<summary>
+    ///		Build a graph from gdl.
+    ///     Ex: 'digraph myGraph { a -> b -> c; b -> d; }'
+    ///	</summary>
     const reGdlRow = /[{\s;]?\w+(\s?->\s?\w+)+[^;]*;/gi,
       reNode = /(\w+)/i,
       reEdge = /->\s?(\w+)/gi,
