@@ -3,7 +3,7 @@
 ## Algorithms
 
 | Algorithm | Path | Big(O) |
-|-----------|------|--------|
+|----|----|----|
 | Binary Search | ./bs.js | O(log n) |
 | Breadth First Search | ./graph_search.js | O(V + E) |
 | Quick Sort | ./qs.js | O(n log n) |
@@ -15,7 +15,7 @@
 ## Data Structures
 
 | Data Structure | Path |
-|-----------|------|
+|---|----|
 | Queue | ./data-structures/Queue.js |
 | DAG | ./data-structures/DirectedAcyclicGraph.js |
 
