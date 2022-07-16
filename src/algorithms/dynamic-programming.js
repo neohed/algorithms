@@ -31,10 +31,10 @@ const items = [
 ]
 
 const maxSize = 4;
-
-const rows = Array(items.length);
-items.forEach((_, i) => rows[i] = Array(maxSize)
-  .fill(0));
+const rows = Array(items.length)
+  .fill(0)
+  .map(() => Array(maxSize)
+    .fill(0));
 
 for (let row = 0; row < items.length; row++) {
   const currentItem = items[row];
