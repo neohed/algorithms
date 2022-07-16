@@ -48,21 +48,21 @@ class DirectedAcyclicGraph {
     const resolved = {};
 
     function dependencyResolve(node) {
-      unresolved[node.name()] = true;
+      unresolved[node.name] = true;
 
-      for (let i = 0, len = node.countEdges(); i < len; ++i) {
+      for (let i = 0, len = node.countEdges; i < len; ++i) {
         const n = node.getEdge(i);
 
-        if (resolved[n.name()] === undefined) {
-          if (unresolved[n.name()]) {
-            throw 'cyclic ref ' + n.name()
+        if (resolved[n.name] === undefined) {
+          if (unresolved[n.name]) {
+            throw 'cyclic ref ' + n.name
           } else {
             dependencyResolve(n)
           }
         }
       }
 
-      resolved[node.name()] = true
+      resolved[node.name] = true
     }
 
     dependencyResolve(startNode)
@@ -87,18 +87,18 @@ class DirectedAcyclicGraph {
     let visitedIndex = 0;
 
     function makeGdl(node) {
-      if (node.countEdges() === 0) {
-        gdlRows[visitedIndex++] += node.name()
+      if (node.countEdges === 0) {
+        gdlRows[visitedIndex++] += node.name
       } else {
-        for (let i = 0, len = node.countEdges(); i < len; ++i) {
+        for (let i = 0, len = node.countEdges; i < len; ++i) {
           if (gdlRows[visitedIndex] === undefined) {
             gdlRows[visitedIndex] = ''
           }
 
-          gdlRows[visitedIndex] += node.name();
+          gdlRows[visitedIndex] += node.name;
 
           const newNode = node.getEdge(i),
-            namePair = node.name() + newNode.name();
+            namePair = node.name + newNode.name;
 
           if (resolved[namePair] === undefined) {
             resolved[namePair] = true;
@@ -177,6 +177,8 @@ class Node {
         this.#edges.push(this.#dag.node(node))
       }
     }
+
+    return this.#dag
   }
 
   edgesContain(nodeName) {
