@@ -26,7 +26,7 @@ function encode(input) {
   return result + counter + previousChar
 }
 
-// O((10 ^ (n - 1)) - 1)
+// O(n + (10 ^ (n - 1)) - 1)
 function decode(input) {
   if (isInValidString(input)) {
     return ''
