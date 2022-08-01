@@ -32,6 +32,7 @@ const inputInValid_3 = [
   [1, 0, 1, 1, 0, 1],
 ]
 
+// O(nm)
 function validate(series) {
   for (let j = 0; j < series.length - 1; j++) {
     const series1 = series[j];
