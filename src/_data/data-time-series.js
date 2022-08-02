@@ -42,6 +42,16 @@ const inputInValid_4 = [
   [0, 0, 0, 1, 1, 1],
 ]
 
+const inputInValid_5 = [
+  [0, 1, 0, 1, 0, 1],
+  [1, 0, 1, 0, 1, 1],
+]
+
+const inputInValid_6 = [
+  [1, 0, 1, 0, 1, 1],
+  [0, 1, 0, 1, 0, 1],
+]
+
 module.exports = {
   inputValid,
   inputValid_2,
@@ -51,4 +61,6 @@ module.exports = {
   inputInValid_2,
   inputInValid_3,
   inputInValid_4,
+  inputInValid_5,
+  inputInValid_6,
 }
