@@ -12,12 +12,22 @@
 | Longest Subsequence | ./subseq.js | O(n^2) |
 | Dynamic Programming | ./algorithms/dynamic-programming.js |  |
 
+
 ## Data Structures
 
 | Data Structure | Path |
 |---|----|
 | Queue | ./data-structures/Queue.js |
 | DAG | ./data-structures/DirectedAcyclicGraph.js |
+
+
+## Interview Questions
+
+| Algorithm | Path | Big(O) |
+|----|----|----|
+| Run Length Encoding | ./es.js | encode: O(n) decode: O(10 ^ n - 1) |
+| Time Series | ./algorithms/time-series.js | O(nm) |
+
 
 ## Todo
 
@@ -26,5 +36,5 @@
 * Levenshtein
 * binary tree, inverted index
 * MapReduce, bloom filters, HyperLogLog
-* Linear Programming, Simplex algorithm
+* Linear Programming: Simplex algorithm
 * 
