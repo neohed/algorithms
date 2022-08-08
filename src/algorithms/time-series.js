@@ -14,16 +14,16 @@ const {
 // O(nm)
 function validate(series) {
   for (let j = 0; j < series.length - 1; j++) {
-    const series1 = series[j];
-    const series2 = series[j + 1];
+    const thisRow = series[j];
+    const nextRow = series[j + 1];
 
-    for (let i = 0; i < series1.length;) {
-      if (series1[i] === series2[i]) {
+    for (let i = 0; i < thisRow.length;) {
+      if (thisRow[i] === nextRow[i]) {
         i++
       } else if (
-        series1[i] !== series1[i + 1] &&
-        series1[i] + series2[i] === 1 &&
-        series1[i + 1] + series2[i + 1] === 1
+        thisRow[i] !== thisRow[i + 1] &&
+        thisRow[i] + nextRow[i] === 1 &&
+        thisRow[i + 1] + nextRow[i + 1] === 1
       ) {
         i += 2
       } else {
