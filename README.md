@@ -25,7 +25,7 @@
 
 | Algorithm | Path | Big(O) |
 |----|----|----|
-| Run Length Encoding | ./es.js | encode: O(n) decode: O(10 ^ n - 1) |
+| Run Length Encoding | ./es.js | encode: O(n) decode: O(10 ^ (n - 1)) |
 | Time Series | ./algorithms/time-series.js | O(nm) |
 
 
