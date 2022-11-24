@@ -31,6 +31,7 @@
 
 ## Todo
 
+* Create: linked list, binary tree, min and max heaps. 
 * Dijkstra's
 * KNN and cosine similarity
 * Levenshtein
