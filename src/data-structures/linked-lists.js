@@ -1,3 +1,5 @@
+//TODO Implement API from: https://www.npmjs.com/package/linked-list
+
 class LinkedList {
   constructor(head = null) {
     this.head = head
