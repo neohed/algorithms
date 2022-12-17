@@ -18,6 +18,7 @@
 | Data Structure | Path |
 |---|----|
 | Queue | ./data-structures/Queue.js |
+| Linked List | ./data-structures/linked-list.js |
 | DAG | ./data-structures/DirectedAcyclicGraph.js |
 
 
