@@ -2,12 +2,12 @@
 
 class LinkedList {
   constructor(head = null) {
-    this.head = head
+    this.headNode = head
   }
 
   get size() {
     let size = 0;
-    let node = this.head;
+    let node = this.headNode;
     while (node) {
       size++;
       node = node.next
@@ -15,21 +15,21 @@ class LinkedList {
     return size
   }
 
-  get last() {
-    let node = this.head;
+  get head() {
+    return this.headNode
+  }
+
+  get tail() {
+    let node = this.headNode;
     while (node.next) {
       node = node.next
     }
     return node
   }
 
-  get first() {
-    return this.head
-  }
-
   get toArray() {
     const res = [];
-    let node = this.head;
+    let node = this.headNode;
     while(node) {
       res.push(node.value);
       node = node.next
@@ -39,16 +39,16 @@ class LinkedList {
 
   set add(value) {
     const temp = new ListItem(value);
-    const node = this.last;
+    const node = this.tail;
     if (node === null) {
-      this.head = temp
+      this.headNode = temp
     }
 
     node.next = temp
   }
 
   clear() {
-    this.head = null
+    this.headNode = null
   }
 }
 
