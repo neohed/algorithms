@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "outDir": "dist",
+        "module": "commonjs",
+        "target": "es5",
+        "lib": ["esnext"],
+        "esModuleInterop": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "src/scripts/**/*"
+    ]
+}
