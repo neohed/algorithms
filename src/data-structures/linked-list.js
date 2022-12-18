@@ -1,3 +1,5 @@
+const {Node} = require('./Node');
+
 //TODO Implement API from: https://www.npmjs.com/package/linked-list
 
 class LinkedList {
@@ -38,7 +40,7 @@ class LinkedList {
   }
 
   set add(value) {
-    const temp = new ListItem(value);
+    const temp = new Node(value);
     const node = this.tail;
     if (node === null) {
       this.headNode = temp
@@ -49,12 +51,5 @@ class LinkedList {
 
   clear() {
     this.headNode = null
-  }
-}
-
-class ListItem {
-  constructor(value) {
-    this.value = value;
-    this.next = null
   }
 }
