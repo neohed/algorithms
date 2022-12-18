@@ -10,6 +10,7 @@ function isSuperset<T>(set: Set<T>, subset: Set<T>) {
 
 function union<T>(setA: Set<T>, setB: Set<T>) {
   const _union = new Set(setA);
+
   for (const elem of setB) {
     _union.add(elem)
   }
@@ -19,6 +20,7 @@ function union<T>(setA: Set<T>, setB: Set<T>) {
 
 function intersection<T>(setA: Set<T>, setB: Set<T>) {
   const _intersection = new Set();
+
   for (const elem of setB) {
     if (setA.has(elem)) {
       _intersection.add(elem)
@@ -30,6 +32,7 @@ function intersection<T>(setA: Set<T>, setB: Set<T>) {
 
 function symmetricDifference<T>(setA: Set<T>, setB: Set<T>) {
   const _difference = new Set(setA);
+
   for (const elem of setB) {
     if (_difference.has(elem)) {
       _difference.delete(elem)
@@ -43,10 +46,11 @@ function symmetricDifference<T>(setA: Set<T>, setB: Set<T>) {
 
 function difference<T>(setA: Set<T>, setB: Set<T>) {
   const _difference = new Set(setA);
+  
   for (const elem of setB) {
     _difference.delete(elem)
   }
-  
+
   return _difference
 }
 
